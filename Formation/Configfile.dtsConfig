@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<DTSConfiguration>
+	<DTSConfigurationHeading>
+		<DTSConfigurationFileInfo GeneratedBy="WIMBEE\skander.benrekaya" GeneratedFromPackageName="Package" GeneratedFromPackageID="{A5BFA017-0B9A-4831-B252-ABAAD8A159F7}" GeneratedDate="05/06/2024 11:37:47"/>
+	</DTSConfigurationHeading>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_csvfile].Properties[Value]" ValueType="String">
+		<ConfiguredValue>C:\</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_csvrejet].Properties[Value]" ValueType="String">
+		<ConfiguredValue>C:\</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_filename].Properties[Value]" ValueType="String">
+		<ConfiguredValue>AG.csv</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_servername].Properties[Value]" ValueType="String">
+		<ConfiguredValue>localhost</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_serverpwd].Properties[Value]" ValueType="String">
+		<ConfiguredValue>Motdepasse21011990</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_serverusername].Properties[Value]" ValueType="String">
+		<ConfiguredValue>sa2</ConfiguredValue>
+	</Configuration>
+</DTSConfiguration>
