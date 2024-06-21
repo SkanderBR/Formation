@@ -1,0 +1,803 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/13/2024 10:42:59 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TUNWL5CD924BTIJ"
+  DTS:CreatorName="WIMBEE\skander.benrekaya"
+  DTS:DTSID="{467EBA5C-88BF-409E-95B2-E12322ECC4A9}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="FInance"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{E2E06294-A360-45FB-B5F5-47508DF1425C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C1FC7A82-8A37-400F-A6B9-3A10D1A77B4A}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::parm_csvfinance]+ @[User::parm_filenameFinance]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\skander.benrekaya\OneDrive - Wimbee\Documents\input_ssis\Input_1\Input_Fin.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.ODS_FINANCE.sa2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D99142A0-FE45-40E0-AB20-6F4533FCD622}"
+      DTS:ObjectName="localhost.ODS_FINANCE.sa2">
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[User::parm_serverpwd]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::parm_servername]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[User::parm_serverusername]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;User ID=sa2;Initial Catalog=ODS_FINANCE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWhGuMOEKe06hejmHzv0xlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAxrFiD2dZR3mzujH1vxq6FAAAAAASAAACgAAAAEAAAAIFM896wc3fxV1OuP6BrK54oAAAAKbJnMKiraYykGeDdpV55bKgGYTz2uoYzg2o2pAKwtdRlGX7NkF2+JhQAAAB1Z7iZtSgTeRqRLmiKkqyNIw2EnQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="C:\Users\skander.benrekaya\source\repos\Formation\Formation\Configfile.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{033CBFC6-8BF7-47CA-8751-44B9D200B27B}"
+      DTS:ObjectName="Configuration 1" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3BE2C15D-9BB0-4052-B96D-8E315B750A5D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::parm_csvfinance]+@[User::parm_filenameFinance]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Fullpath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\skander.benrekaya\OneDrive - Wimbee\Documents\input_ssis\Input_1\Input_Fin.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B7FB0F0-4E01-4420-89FE-461E38444747}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="parm_csvfinance">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\skander.benrekaya\OneDrive - Wimbee\Documents\input_ssis\Input_1\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F6DE3E6E-314D-419E-9AC2-2490B3A02692}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="parm_filenameFinance">
+      <DTS:VariableValue
+        DTS:DataType="8">Input_Fin.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CC97BA9-8105-42C0-B55A-54E0D7B9E5E5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="parm_servername">
+      <DTS:VariableValue
+        DTS:DataType="8">localhost</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AF3E4743-DA3E-4A73-8337-A4133CD53011}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="parm_serverpwd">
+      <DTS:VariableValue
+        DTS:DataType="8">Motdepasse21011990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{14872B04-3EEC-4490-96C9-AAB88E6D1BE4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="parm_serverusername">
+      <DTS:VariableValue
+        DTS:DataType="8">sa2</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{47049C9D-2FA2-4FC2-A9B1-A66FBC9B30D7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Sheetname">
+      <DTS:VariableValue
+        DTS:DataType="8">Finance$</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4F4D5F69-91B7-43A1-BCB2-221A58B3C287}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DFT_&quot;+@[User::var_packagename]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var_dataflowname">
+      <DTS:VariableValue
+        DTS:DataType="8">DFT_ODS_Finance</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03E75152-2485-4DEE-BB8C-ADBDF2B72169}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var_packagename">
+      <DTS:VariableValue
+        DTS:DataType="8">ODS_Finance</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_ODS_Finance"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{E0614FCB-5942-4BB8-8477-083B7F680376}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_ODS_Finance"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Name">@[User::var_dataflowname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_ODS_Finance\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_ODS_Finance\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT_ODS_Finance\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
+                      name="insert_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT_ODS_Finance\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_ODS_Finance\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[ODS_Finance]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_ODS_Finance\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.ODS_FINANCE.sa2]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.ODS_FINANCE.sa2]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OrganizationName"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[DepartmentGroupName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DepartmentGroupName"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DepartmentGroupName]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[DepartmentGroupName]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ScenarioName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ScenarioName"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ScenarioName]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[ScenarioName]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[AccountType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AccountType"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountType]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[AccountType]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Amount]"
+                      cachedDataType="r8"
+                      cachedName="Amount"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Amount]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[Amount]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[FullDateAlternateKey]"
+                      cachedDataType="date"
+                      cachedName="FullDateAlternateKey"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[FullDateAlternateKey]" />
+                    <inputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[insert_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="insert_date"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_Date]"
+                      lineageId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date]"
+                      dataType="dbDate"
+                      name="date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[DepartmentGroupName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DepartmentGroupName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ScenarioName]"
+                      dataType="wstr"
+                      length="50"
+                      name="ScenarioName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountType]"
+                      dataType="wstr"
+                      length="50"
+                      name="AccountType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Amount]"
+                      dataType="i4"
+                      name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_Date]"
+                      dataType="dbTimeStamp"
+                      name="Insert_Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_ODS_Finance\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_ODS_Finance\Source Excel"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Source Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source Excel"
+              name="Source Excel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable">User::Sheetname</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+                <property
+                  dataType="System.String"
+                  description="Mappage des paramètres de la commande SQL en variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_ODS_Finance\Source Excel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel]"
+                  name="Sortie de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[FullDateAlternateKey]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[FullDateAlternateKey]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[FullDateAlternateKey]"
+                      name="FullDateAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]"
+                      name="OrganizationName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[DepartmentGroupName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[DepartmentGroupName]"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[DepartmentGroupName]"
+                      name="DepartmentGroupName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[ScenarioName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[ScenarioName]"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[ScenarioName]"
+                      name="ScenarioName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[AccountType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[AccountType]"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[AccountType]"
+                      name="AccountType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[Amount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[Amount]"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].Columns[Amount]"
+                      name="Amount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[FullDateAlternateKey]"
+                      dataType="date"
+                      name="FullDateAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="255"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[DepartmentGroupName]"
+                      dataType="wstr"
+                      length="255"
+                      name="DepartmentGroupName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[ScenarioName]"
+                      dataType="wstr"
+                      length="255"
+                      name="ScenarioName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[AccountType]"
+                      dataType="wstr"
+                      length="255"
+                      name="AccountType" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[Amount]"
+                      dataType="r8"
+                      name="Amount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[FullDateAlternateKey]"
+                      dataType="date"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[FullDateAlternateKey]"
+                      name="FullDateAlternateKey" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
+                      name="OrganizationName" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[DepartmentGroupName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[DepartmentGroupName]"
+                      name="DepartmentGroupName" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ScenarioName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ScenarioName]"
+                      name="ScenarioName" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[AccountType]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[AccountType]"
+                      name="AccountType" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[Amount]"
+                      dataType="r8"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[Amount]"
+                      name="Amount" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_ODS_Finance.Paths[Sortie de colonne dérivée]"
+              endId="Package\DFT_ODS_Finance\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\DFT_ODS_Finance\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\DFT_ODS_Finance.Paths[Sortie de source Excel]"
+              endId="Package\DFT_ODS_Finance\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source Excel"
+              startId="Package\DFT_ODS_Finance\Source Excel.Outputs[Sortie de source Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table ODS_Finance"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{44B5D868-F53C-4475-9026-739546822088}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table ODS_Finance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Name">"Truncate table "+   @[User::var_packagename]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"Truncate table "+   @[User::var_packagename]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D99142A0-FE45-40E0-AB20-6F4533FCD622}"
+          SQLTask:SqlStatementSource="Truncate table ODS_Finance" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1CD48B5E-352A-43C4-B07A-53F7A3B4B717}"
+      DTS:From="Package\Truncate table ODS_Finance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_ODS_Finance" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\DFT_ODS_Finance"
+          TopLeft="355,267" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Truncate table ODS_Finance"
+          TopLeft="331,148" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="454.25,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_ODS_Finance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_ODS_Finance\Destination OLE DB"
+          TopLeft="333,305" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DFT_ODS_Finance\Colonne dérivée"
+          TopLeft="348,186" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\DFT_ODS_Finance\Source Excel"
+          TopLeft="356,80" />
+        <EdgeLayout
+          Id="Package\DFT_ODS_Finance.Paths[Sortie de source Excel]"
+          TopLeft="425.5,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_ODS_Finance.Paths[Sortie de colonne dérivée]"
+          TopLeft="422,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_ODS_Finance\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_ODS_Finance\Source Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

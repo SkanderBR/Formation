@@ -5,22 +5,22 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="TUNWL5CD924BTIJ"
   DTS:CreatorName="WIMBEE\skander.benrekaya"
-  DTS:DTSID="{A5BFA017-0B9A-4831-B252-ABAAD8A159F7}"
+  DTS:DTSID="{61C76E7E-D3C5-458E-B2CD-9378898EEED1}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1036"
-  DTS:ObjectName="Dim_Agence"
+  DTS:ObjectName="Dim_AGENCE"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{24E5F518-DF54-44A9-B69A-096C457CAB18}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{854C0BE6-AA7F-41F0-B73E-D5882FACF050}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[AG.csv]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{0F520681-BA57-49EF-A00F-BA3BF41DEED3}"
+      DTS:DTSID="{334ABB9B-CF15-4639-8D98-4C3E9C12A090}"
       DTS:ObjectName="AG.csv">
       <DTS:PropertyExpression
         DTS:Name="ConnectionString">@[User::parm_csvfile] +@[User::parm_filename]</DTS:PropertyExpression>
@@ -44,7 +44,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Code_Agence"
-              DTS:DTSID="{EDD42D8E-20B4-4A47-B334-76DF780B2089}"
+              DTS:DTSID="{8DDBF9B4-621A-46E4-BD42-3B09474D4822}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -53,7 +53,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Libelle_Agence"
-              DTS:DTSID="{0234FA7F-D26C-45DC-89F8-3207BDF23F5F}"
+              DTS:DTSID="{57600E77-6D90-4C19-9D12-064767222FA1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -62,7 +62,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[localhost.ODS_MIEM.sa2]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{223228CA-BAC2-480C-92BC-7F59E5341875}"
+      DTS:DTSID="{EABCF241-E8BE-4862-93BB-557DA1898B37}"
       DTS:ObjectName="localhost.ODS_MIEM.sa2">
       <DTS:PropertyExpression
         DTS:Name="Password">@[User::parm_serverpwd]</DTS:PropertyExpression>
@@ -78,7 +78,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWhGuMOEKe06hejmHzv0xlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABcTYFHca5V9DOT+/e71RlkAAAAAASAAACgAAAAEAAAAKDKoBz6WmJZMyMZ1tYqvZwoAAAAp+SwqS7JXFzaiFZYLEzdfx/p9SSD1J1UhDIZmho/ZnfhMZ6Ht7Eo4xQAAAAMXdxyt5axQuI1wVQtWCfHeE5FwQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWhGuMOEKe06hejmHzv0xlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADblw2OwWDiUpJYbL6U+gyOAAAAAASAAACgAAAAEAAAADTsPbFZ/Zqn6PwSrYRosMQoAAAAwuNDhAMUSabV73T+5Qwega40fQFi3MVDCyKSN42XTisyYT5SnwZT1xQAAADXqUo0jvNb8vdaGC5QFHL1f0tzPg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -88,13 +88,22 @@
       DTS:ConfigurationString="C:\Users\skander.benrekaya\source\repos\Formation\Formation\Configfile.dtsConfig"
       DTS:ConfigurationType="1"
       DTS:CreationName=""
-      DTS:DTSID="{37F762B6-5A11-4FEE-BF94-5628B987D5E6}"
+      DTS:DTSID="{E74FE519-2789-43CE-BC7C-5A934C00BAFD}"
       DTS:ObjectName="Configuration 1" />
   </DTS:Configurations>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{397389A7-20F1-430E-A8E6-CB92A28AC658}"
+      DTS:DTSID="{A77C8DF8-ADAD-4A38-9E5E-C4652C5B16D0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Getdate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F17EECD7-BEB7-4941-9D39-AE866F39C866}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_csvfile">
@@ -103,7 +112,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4D421210-9216-4F8C-ACF7-2A77D4A61B14}"
+      DTS:DTSID="{7575C303-FB46-4AA6-A9C5-52EEE897BB44}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_csvrejet">
@@ -112,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E8DFEB42-CE6F-4C57-8F6C-07F099A392D3}"
+      DTS:DTSID="{480E632C-39F5-4F6D-9485-336B712A1201}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_filename">
@@ -121,7 +130,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C42FFD0C-5DAF-46A5-8D13-F54305736813}"
+      DTS:DTSID="{9FDD7901-6027-42FB-8557-1FF23C86C85F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_servername">
@@ -130,7 +139,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{51F3FA7C-BF3D-40CA-A774-947C2C1D0473}"
+      DTS:DTSID="{1CC47A9D-3D5A-42CE-BBE4-8838B484BAB1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_serverpwd">
@@ -139,7 +148,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A87A1917-3D2C-4176-92F5-1AF04FC21D2A}"
+      DTS:DTSID="{10A67A0C-069D-48F8-A33B-4A42AD7DD46A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="parm_serverusername">
@@ -148,8 +157,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{646D124D-A9D5-4B23-B62F-49020692E963}"
-      DTS:EvaluateAsExpression="True"
+      DTS:DTSID="{C8782C95-3FFE-4D13-BEE3-2328CCADC2E1}"
       DTS:Expression="&quot;Dft_Load_&quot;+ @[User::var_packagename]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -159,7 +167,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9B5454AA-E3C7-4B8A-A760-32D0702F5240}"
+      DTS:DTSID="{E7AB1F55-B87D-4E69-964F-87AB69E8A213}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_packagename">
@@ -172,7 +180,7 @@
       DTS:refId="Package\Dft_Load_Dim_Agence"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
-      DTS:DTSID="{3A8B849A-0968-4934-BEA2-59A67CEF4F60}"
+      DTS:DTSID="{4BC1F1A4-BD6F-4E45-B0A6-71C8E11D4092}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Dft_Load_Dim_Agence"
@@ -570,7 +578,7 @@
         <NodeLayout
           Size="186,42"
           Id="Package\Dft_Load_Dim_Agence"
-          TopLeft="458,147" />
+          TopLeft="370.428571428571,236" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

@@ -1,13 +1,19 @@
 <?xml version="1.0"?>
 <DTSConfiguration>
 	<DTSConfigurationHeading>
-		<DTSConfigurationFileInfo GeneratedBy="WIMBEE\skander.benrekaya" GeneratedFromPackageName="Package" GeneratedFromPackageID="{A5BFA017-0B9A-4831-B252-ABAAD8A159F7}" GeneratedDate="05/06/2024 11:37:47"/>
+		<DTSConfigurationFileInfo GeneratedBy="WIMBEE\skander.benrekaya" GeneratedFromPackageName="FInance" GeneratedFromPackageID="{467EBA5C-88BF-409E-95B2-E12322ECC4A9}" GeneratedDate="20/06/2024 14:35:38"/>
 	</DTSConfigurationHeading>
 	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_csvfile].Properties[Value]" ValueType="String">
 		<ConfiguredValue>C:\</ConfiguredValue>
 	</Configuration>
 	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_csvrejet].Properties[Value]" ValueType="String">
 		<ConfiguredValue>C:\</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_csvfinance].Properties[Value]" ValueType="String">
+		<ConfiguredValue>C:\Users\skander.benrekaya\OneDrive - Wimbee\Documents\input_ssis\Input_1\</ConfiguredValue>
+	</Configuration>
+	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_filenameFinance].Properties[Value]" ValueType="String">
+		<ConfiguredValue>Input_Fin.xlsx</ConfiguredValue>
 	</Configuration>
 	<Configuration ConfiguredType="Property" Path="\Package.Variables[User::parm_filename].Properties[Value]" ValueType="String">
 		<ConfiguredValue>AG.csv</ConfiguredValue>

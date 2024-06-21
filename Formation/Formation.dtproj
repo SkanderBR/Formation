@@ -14,8 +14,18 @@
     <Manifest>
       <DTSPackages>
         <DtsPackage FormatVersion="8">
-          <Name>Package.dtsx</Name>
-          <FullPath>Package.dtsx</FullPath>
+          <Name>Dim_AGENCE.dtsx</Name>
+          <FullPath>Dim_AGENCE.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>FInance.dtsx</Name>
+          <FullPath>FInance.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Organisation.dtsx</Name>
+          <FullPath>Organisation.dtsx</FullPath>
           <References />
         </DtsPackage>
       </DTSPackages>
@@ -39,13 +49,7 @@
         <LinkedAzureSSISIR />
         <LinkedAzureStorage />
         <RemoteExecutionFolder />
-        <ParameterConfigurationValues>
-          <ConfigurationSetting>
-            <Id>LastModifiedTime</Id>
-            <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2024-06-05T09:33:01.4403974Z</Value>
-          </ConfigurationSetting>
-        </ParameterConfigurationValues>
+        <ParameterConfigurationValues />
       </Options>
     </Configuration>
   </Configurations>
