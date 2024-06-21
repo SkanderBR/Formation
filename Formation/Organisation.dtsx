@@ -12,8 +12,8 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="FInance"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{B39F263C-BC8E-4096-BE47-FAEB0D603715}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{70BFD0ED-267B-45A9-B78C-EFD9640C7485}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -50,7 +50,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWhGuMOEKe06hejmHzv0xlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACjjCN7mv7teNQf753t31fRAAAAAASAAACgAAAAEAAAAFsOe7ZJJIb291hRX+4byScoAAAAJSpV+5Z6MfPkqcvG0yBIiSQHkvFnpJEmH/nEpHsS7Nb/0fdE93rGdxQAAACzu8E+9m/x8dEXjfrHqKuozTpriw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWhGuMOEKe06hejmHzv0xlwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABWBJn4YAQcbkziZtQwAb1wAAAAAASAAACgAAAAEAAAAPf53Sy0Fa6m9q4mH7iPzewoAAAAmkIA5UpS5CqwLFV4SAlTsmP21bRAGcymgDnq7l3uFMvdIRnrBpXv0xQAAAD8bFD+IY/KiRZqsRe2+F6Y0Xq/eA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -168,84 +168,11 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT_ODS_Organisation\Colonne dérivée"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
-              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
-              name="Colonne dérivée"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DFT_ODS_Organisation\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
-                  description="Entrée de la transformation de colonnes dérivées"
-                  name="Entrée de colonne dérivée">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
-                  description="Sortie par défaut de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  name="Sortie de colonne dérivée"
-                  synchronousInputId="Package\DFT_ODS_Organisation\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
-                      name="insert_date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[GETDATE]()</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">GETDATE()</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
-                  description="Sortie d'erreur de la transformation de colonnes dérivées"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Sortie d'erreur de colonne dérivée"
-                  synchronousInputId="Package\DFT_ODS_Organisation\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\DFT_ODS_Organisation\Destination OLE DB"
+              refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
               description="Destination OLE DB"
-              name="Destination OLE DB"
+              name="DEST ODS_Organisation"
               usesDispositions="true"
               version="4">
               <properties>
@@ -298,7 +225,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_ODS_Organisation\Destination OLE DB.Connections[OleDbConnection]"
+                  refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.ODS_FINANCE.sa2]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.ODS_FINANCE.sa2]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
@@ -306,57 +233,57 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB]"
                   errorOrTruncationOperation="Insérer"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[OrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].Columns[OrganizationName]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="OrganizationName"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]" />
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[OrganizationName]" />
                     <inputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ParentOrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].Columns[ParentOrganizationName]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ParentOrganizationName"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationName]"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]" />
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]" />
                     <inputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[PercentageOfOwnership]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].Columns[PercentageOfOwnership]"
                       cachedDataType="r8"
                       cachedName="PercentageOfOwnership"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]" />
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]" />
                     <inputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[insert_date]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].Columns[insert_date]"
                       cachedDataType="dbTimeStamp"
                       cachedName="insert_date"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_date]"
-                      lineageId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[insert_date]" />
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_date]"
+                      lineageId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie de colonne dérivée].Columns[insert_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
                       dataType="wstr"
                       length="50"
                       name="OrganizationName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationName]"
                       dataType="wstr"
                       length="50"
                       name="ParentOrganizationName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
                       dataType="i4"
                       name="PercentageOfOwnership" />
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_date]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB].ExternalColumns[Insert_date]"
                       dataType="dbTimeStamp"
                       name="Insert_date" />
                   </externalMetadataColumns>
@@ -364,22 +291,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_ODS_Organisation\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Outputs[Sortie d'erreur de destination OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  synchronousInputId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      refId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -388,11 +315,84 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_ODS_Organisation\Source Excel"
+              refId="Package\DFT_ODS_Organisation\Get_inserted_date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Get_inserted_date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_ODS_Organisation\Get_inserted_date.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\DFT_ODS_Organisation\Get_inserted_date.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie de colonne dérivée].Columns[insert_date]"
+                      name="insert_date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\DFT_ODS_Organisation\Get_inserted_date.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_ODS_Organisation\Organisation_Source"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Source Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
               description="Source Excel"
-              name="Source Excel"
+              name="Organisation_Source"
               usesDispositions="true"
               version="1">
               <properties>
@@ -429,7 +429,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_ODS_Organisation\Source Excel.Connections[OleDbConnection]"
+                  refId="Package\DFT_ODS_Organisation\Organisation_Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
@@ -437,89 +437,89 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel]"
+                  refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel]"
                   name="Sortie de source Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[OrganizationName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
                       length="255"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[OrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[OrganizationName]"
                       name="OrganizationName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[ParentOrganizationName]"
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[ParentOrganizationName]"
                       length="255"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[ParentOrganizationName]"
                       name="ParentOrganizationName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[PercentageOfOwnership]"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]"
+                      externalMetadataColumnId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[PercentageOfOwnership]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].Columns[PercentageOfOwnership]"
                       name="PercentageOfOwnership"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[OrganizationName]"
                       dataType="wstr"
                       length="255"
                       name="OrganizationName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[ParentOrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[ParentOrganizationName]"
                       dataType="wstr"
                       length="255"
                       name="ParentOrganizationName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[PercentageOfOwnership]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel].ExternalColumns[PercentageOfOwnership]"
                       dataType="r8"
                       name="PercentageOfOwnership" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel]"
+                  refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel]"
                   isErrorOut="true"
                   name="Sortie d'erreur de source Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ParentOrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ParentOrganizationName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ParentOrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ParentOrganizationName]"
                       name="ParentOrganizationName" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[PercentageOfOwnership]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[PercentageOfOwnership]"
                       dataType="r8"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[PercentageOfOwnership]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[PercentageOfOwnership]"
                       name="PercentageOfOwnership" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[OrganizationName]"
                       name="OrganizationName" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      refId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -531,14 +531,14 @@
           <paths>
             <path
               refId="Package\DFT_ODS_Organisation.Paths[Sortie de colonne dérivée]"
-              endId="Package\DFT_ODS_Organisation\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              endId="Package\DFT_ODS_Organisation\DEST ODS_Organisation.Inputs[Entrée de destination OLE DB]"
               name="Sortie de colonne dérivée"
-              startId="Package\DFT_ODS_Organisation\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+              startId="Package\DFT_ODS_Organisation\Get_inserted_date.Outputs[Sortie de colonne dérivée]" />
             <path
               refId="Package\DFT_ODS_Organisation.Paths[Sortie de source Excel]"
-              endId="Package\DFT_ODS_Organisation\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              endId="Package\DFT_ODS_Organisation\Get_inserted_date.Inputs[Entrée de colonne dérivée]"
               name="Sortie de source Excel"
-              startId="Package\DFT_ODS_Organisation\Source Excel.Outputs[Sortie de source Excel]" />
+              startId="Package\DFT_ODS_Organisation\Organisation_Source.Outputs[Sortie de source Excel]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -592,12 +592,12 @@
           Id="Package\DFT_ODS_Organisation"
           TopLeft="355,267" />
         <NodeLayout
-          Size="245,42"
+          Size="236,42"
           Id="Package\Truncate table ODS_Organisation"
           TopLeft="331,148" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="454.25,190">
+          TopLeft="452,190">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -626,31 +626,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\DFT_ODS_Organisation\Destination OLE DB"
+          Size="194,42"
+          Id="Package\DFT_ODS_Organisation\DEST ODS_Organisation"
           TopLeft="333,305" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\DFT_ODS_Organisation\Colonne dérivée"
+          Size="165,42"
+          Id="Package\DFT_ODS_Organisation\Get_inserted_date"
           TopLeft="348,186" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\DFT_ODS_Organisation\Source Excel"
-          TopLeft="356,80" />
+          Size="176,42"
+          Id="Package\DFT_ODS_Organisation\Organisation_Source"
+          TopLeft="330,77" />
         <EdgeLayout
           Id="Package\DFT_ODS_Organisation.Paths[Sortie de source Excel]"
-          TopLeft="425.5,122">
+          TopLeft="418,119">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="12.5,67"
               Start="0,0"
-              End="0,56.5">
+              End="12.5,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="8.5,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,33.5"
+                    Point2="12.5,33.5"
+                    Point3="12.5,37.5" />
+                  <mssgle:LineSegment
+                    End="12.5,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -661,7 +673,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_ODS_Organisation.Paths[Sortie de colonne dérivée]"
-          TopLeft="422,228">
+          TopLeft="430.25,228">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -685,7 +697,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_ODS_Organisation\Destination OLE DB">
+    design-time-name="Package\DFT_ODS_Organisation\DEST ODS_Organisation">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -698,7 +710,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_ODS_Organisation\Source Excel">
+    design-time-name="Package\DFT_ODS_Organisation\Organisation_Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
